@@ -1,14 +1,15 @@
 ### brute force search - substring search
+ブルートフォース検索 - 部分文字列検索
 
 
 ```javascript
 
 function bruteForceSearch(text, pattern){
-	let result = []
+  let result = []
 
-	for(let i = 0; i <= text.length - pattern.length; i++){
-  	if(text.substring(i, i + pattern.length) == pattern) {
-    result.push(i)
+  for(let i = 0; i <= text.length - pattern.length; i++){
+    if(text.substring(i, i + pattern.length) == pattern) {
+      result.push(i)
     }
   }
   
