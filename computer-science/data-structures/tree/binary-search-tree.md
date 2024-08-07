@@ -67,4 +67,18 @@ function keyExist(key, bst) {
   if(bst.data > key) return keyExist(key, bst.left)
   else return keyExist(key, bst.right)
 }
+
+反復を使用した方法
+function keyExist(key, bst) {
+  let iterator = bst;
+  while(iterator != null) {
+    if(iterator.data == key) return iterator
+    if(iterator.data > key) iterator = iterator.left
+    else iterator = iterator.right
+  }
+
+  return false
+}
 ```
+
+検索にかかる時間計算量はO(logN)となる
