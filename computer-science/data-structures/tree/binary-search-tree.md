@@ -49,3 +49,22 @@ function createBST(arr) {
 
 const sortedArr = [1, 2, 3, 4, 5, 6, 7]
 ```
+
+```mathematica
+     4
+    / \
+  2     6
+ / \   / \
+1   3 5   7
+```
+
+```
+function keyExist(key, bst) {
+  if(bst == null) return false
+  if(bst.data == key) return true
+
+  // keyの値より現在のノードの値が大きければ左側
+  if(bst.data > key) return keyExist(key, bst.left)
+  else return keyExist(key, bst.right)
+}
+```
