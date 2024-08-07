@@ -186,3 +186,15 @@ function countDivisibleByK(n,k){
 // n % k != 0, f(n, k) = 0
 // n % k = 0, f(n, k) = f(n / k, k) + 1
 ```
+
+仮想通貨
+```javascript
+function maximumPeople(x,y){
+  if(y == 0) return x
+
+  return maximumPeople(y, x % y)
+}
+
+// y = 0, maximumPeople(x, y) = x
+// y > 0, maximumPeople(x, y) = maximumPeople(y, x % y)
+```
