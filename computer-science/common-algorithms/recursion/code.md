@@ -167,8 +167,7 @@ function reverseString(s) {
 function gcd(m, n) {
   if(n == 0) return m
 
-  return gcd(n, m % n
-}
+  return gcd(n, m % n)
 }
 
 // n = 0, gcd(m, n) = m
@@ -197,4 +196,53 @@ function maximumPeople(x,y){
 
 // y = 0, maximumPeople(x, y) = x
 // y > 0, maximumPeople(x, y) = maximumPeople(y, x % y)
+```
+
+3つの最大公約数
+```javascript
+function threeGCD(x, y, z) {
+  return gcd(gcd(x, y), z)
+}
+  
+function gcd(x, y) {
+  if(y == 0) return x
+  return gcd(y, x % y)
+}
+
+// y = 0, gcd(x, y) = x 
+// y > 0, f(x, y) = f(y, x % y)
+```
+
+既約分数
+```javascript
+function irreducibleFraction(x, y) {
+  let z = gcd(x, y)
+  return y / z == 1 ? `${x / z}` : `${x / z}/${y / z}`
+}
+  
+function gcd(x, y) {
+  if(y == 0) return x
+  return gcd(y, x % y)
+}
+
+// y = 0, gcd(x, y) = x
+// y > 0, gcd(x, y) = gcd(y, x % y)
+```
+
+購入できる最大のパンの個数
+```javascript
+function maxBread(money, price, sticker) {
+    let bread = Math.floor(money / price)
+    bread += stickerForBread(sticker, bread)
+    return bread
+}
+  
+function stickerForBread(required, current) {
+    if(current < required) return 0
+    const bread = Math.floor(current / required)
+    return stickerForBread(required, current % required + bread) + bread
+}
+
+// current < required, stickerForBread(required, current) = 0
+// current >= required, stickerForBread(required, current) = stickerForBread(required, current % required + Math.floor(current / required)) + Math.floor(current / required)
 ```
