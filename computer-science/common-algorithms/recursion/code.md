@@ -246,3 +246,30 @@ function stickerForBread(required, current) {
 // current < required, stickerForBread(required, current) = 0
 // current >= required, stickerForBread(required, current) = stickerForBread(required, current % required + Math.floor(current / required)) + Math.floor(current / required)
 ```
+
+文字列の圧縮
+```javascript
+function stringCompression(s) {
+  if(s == "") return ""
+  let count = stringCount(s, s[0])
+  let compressedPart  = count > 1 ? s[0] + count : s[0]
+  return compressedPart + stringCompression(s.slice(count))
+}
+
+// s = "", f(s) = ""
+// s = "...", f(s) = f(s) = s[0] + stringCount(s, s[0]) + f(s.slice(stringCount(s, s[0])))
+  
+function stringCount(s, value) {
+  if(s[0] != value) return 0
+  return stringCount(s.slice(1), value) + 1
+}
+
+// s[0] != value, f(s) = 0
+// s[0] = value, f(s) = f(s.slice(1)) + 1
+```
+
+整数上の平方根
+```javascript
+
+
+```
