@@ -270,6 +270,15 @@ function stringCount(s, value) {
 
 整数上の平方根
 ```javascript
+function intSquareRoot(n) {
+  return intSquareRootHelper(n, 1)
+}
 
+function intSquareRootHelper(n, guess) {
+  if(guess**2 > n) return guess - 1
+  return intSquareRootHelper(n, guess + 1)
+}
 
+// guess**2 > n, f(n, guess) = guess - 1
+// guess**2 < n, f(n, guess) = f(n, guess + 1)
 ```
