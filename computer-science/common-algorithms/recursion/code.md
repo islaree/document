@@ -282,3 +282,18 @@ function intSquareRootHelper(n, guess) {
 // guess**2 > n, f(n, guess) = guess - 1
 // guess**2 < n, f(n, guess) = f(n, guess + 1)
 ```
+
+素数（再帰）
+```javascript
+function recursiveIsPrime(n) {
+  return recursiveIsPrimeHelper(n)
+}
+
+function recursiveIsPrimeHelper(n, m) {
+  if()
+}
+
+// n % m = 0, f(n, m) = true
+// n = m, f(n, m) = false
+// f(n, m) = f(n, m + 1)
+```
