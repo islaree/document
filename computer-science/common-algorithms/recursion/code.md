@@ -286,12 +286,15 @@ function intSquareRootHelper(n, guess) {
 素数（再帰）
 ```javascript
 function recursiveIsPrime(n) {
-  return recursiveIsPrimeHelper(n)
+  return recursiveIsPrimeHelper(n, 2)
 }
-
+  
 function recursiveIsPrimeHelper(n, m) {
-  if()
-}
+  if(n < m) return false
+  if(n == m) return true
+  if(n % m == 0) return false
+  return recursiveIsPrimeHelper(n, m + 1)
+} 
 
 // n % m = 0, f(n, m) = true
 // n = m, f(n, m) = false
