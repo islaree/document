@@ -39,3 +39,7 @@ export default function Bio() {
   );
 }
 ```
+
+### 中括弧を使用したJSX
+
+`{}`内にはjavascriptを記述することが可能です。
